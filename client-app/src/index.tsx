@@ -5,6 +5,7 @@ import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/stores/store';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   // React StrictMode will enforce anything not compatible, outdate, or deprecated to React 17, we dont need it.
@@ -12,7 +13,9 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
   <StoreContext.Provider value={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StoreContext.Provider>,
   document.getElementById('root')
 );
